@@ -1,2 +1,0 @@
-# DebateGate
-# DebateGate
