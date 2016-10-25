@@ -1,0 +1,37 @@
+body {
+background-color: black;
+color: white;
+}
+
+#code {
+  text-align:center;
+}
+
+#name {
+  text-align: center;
+}
+
+#people {
+
+}
+
+#chat {
+
+}
+
+#message {
+
+}
+
+#middle {
+  text-alig: center;
+  padding-left: 500px
+
+}
+#messagesDiv{
+  text-align: left;
+  padding-left: 500px
+}
+#title{
+  text-align: center;
+}
