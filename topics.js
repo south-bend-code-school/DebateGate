@@ -23,6 +23,7 @@ dbRef.on('value', snapshot=> {
             var question = document.createElement('p');
             var outer_div = document.createElement('div');
             var inner_div = document.createElement('div');
+            var pic_div = document.createElement('div');
             var image = document.createElement('img');
             var aTag = document.createElement('a');
             aTag.setAttribute('href','join.html?topic='+dataKeys[i]);
@@ -49,20 +50,27 @@ dbRef.on('value', snapshot=> {
             inner_div.appendChild(question);
             //outer_div.appendChild(image);
             //div.appendChild(image);
-            //make changes to div css
+            //make changes in css
+            topic.style.fontFamily = "sans-serif";
+            topic.style.color = "white";
+            question.style.color = "white";
+            question.style.fontFamily = "sans-serif";
             outer_div.style.textAlign = "left";
-            outer_div.style.border = "solid black 5px";
+            outer_div.style.border = "solid DarkGray 5px";
             outer_div.style.float = "left";
             outer_div.style.width = "75%";
             outer_div.style.height = "100px";
             outer_div.style.margin = "1em";
             outer_div.style.display = "flex";
-            outer_div.style.backgroundColor = "LightGray"; 
-            inner_div.style.backgroundColor = "Gray";
+            outer_div.style.backgroundColor = "gray";
+            inner_div.style.backgroundColor = "seagreen";
             inner_div.style.textAlign = "left";
             inner_div.style.display = "inline-grid";
-            inner_div.style.width = "75%";
+            inner_div.style.width = "80%";
+            pic_div.style.backgroundColor = "Green";
+            pic_div.style.backgroundColor = "20%";
             //append div to div and outer div to a tag
+            outer_div.appendChild(pic_div);
             outer_div.appendChild(inner_div);
             aTag.appendChild(outer_div);
             //append a ref tag (everything) to the body of the html document

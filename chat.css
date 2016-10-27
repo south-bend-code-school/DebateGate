@@ -1,6 +1,8 @@
 body {
-background-color: black;
-color: white;
+background-color: white;
+color: black;
+margin: 0px;
+font-family: sans-serif;
 }
 
 #code {
@@ -11,27 +13,41 @@ color: white;
   text-align: center;
 }
 
-#people {
-
+#buttonoutside {
+  background-color: seagreen;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
-#chat {
-
-}
-
-#message {
-
+#actualbutton {
+  height: 40px;
+  width:100px;
+  font-size:12px;
 }
 
 #middle {
-  text-alig: center;
-  padding-left: 500px
-
+  padding-left: 10px;
+  background-color: silver;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
 #messagesDiv{
   text-align: left;
-  padding-left: 500px
+  padding-left: 10px;
+  background-color: silver;
+  padding-top: 10px;
 }
+
 #title{
-  text-align: center;
+  text-align: left;;
+  background-color: seagreen;
+  margin: 0px;
+  padding: 10px;
+}
+
+#question{
+  text-align:left;
+  font-size: 24px;
+  padding-left: 10px;
 }

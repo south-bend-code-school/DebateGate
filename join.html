@@ -7,8 +7,8 @@
     <link href="join.css" rel="stylesheet">
     <!--Script to get topic from previous page URL and create and h1 with that text-->
     <script> function LoadTopicHeader(){
-        var topicHeader = document.createElement('h1'); 
-        var headerText = document.createTextNode(location.search.split('topic=')[1]+" Debate");
+        var topicHeader = document.createElement('h1');
+        var headerText = document.createTextNode(decodeURI(location.search.split('topic=')[1]+" Debate"));
         topicHeader.appendChild(headerText);
         document.getElementById('header').appendChild(topicHeader);
     }
@@ -19,23 +19,27 @@
     <div id="header">
         <!--Topic from previous page loaded here with LoadTopicHeader function-->
     </div>
-    <h2>I am a/the:</h2>
+    <div class="box">
+      <div class="blue">
+    <h2>I am :</h2>
     <div id="information">
         <div class="radio">
-            <label><input type="radio" name="Position" value="Republicans">Republican</label>
+            <label><input type="radio" name="Position" value="Republicans">For This</label>
         </div>
         <div class="radio">
-            <label><input type="radio" name="Position" value="Moderators">Moderator</label>
+            <label><input type="radio" name="Position" value="Moderators">Neutral</label>
         </div>
         <div class="radio">
-            <label><input type="radio" name="Position" value="Democrats">Democrat</label>
+            <label><input type="radio" name="Position" value="Democrats">Against This</label>
         </div>
         <div>
             <h2>Name</h2><input type="text" id="textInput">
         </div>
         <button id="joinButton">Join Debate</button>
     </div>
+  </div>
+  </div>
     <!---This Has to be the last line-->
-    <script src="./join.js"></script> 
+    <script src="./join.js"></script>
 </body>
 </html>

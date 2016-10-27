@@ -10,9 +10,16 @@ firebase.initializeApp(config);
 
 
 //to get the chat room
-var chatroom = location.search.split('topic=')[1];
+var topic = decodeURI(location.search.split('topic=')[1]);
+var chatroom = topic.split('&name=')[0];
 myDataRef = firebase.database().ref(chatroom);
+myDataRef2 = firebase.database().ref(chatroom);
 //myDataRef = new Firebase('https://fiery-heat-2588.firebaseio.com');
+
+//call reference once to get topic question and set it to header tag in html
+myDataRef2.on('value',function(snapshot){
+    document.getElementById("question").innerHTML = snapshot.child("Question").val();
+});
 
 $('#messageInput').keypress(function (e) {
   if(e.keyCode == 13) { //keyCode 13 is the "enter key"

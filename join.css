@@ -1,0 +1,26 @@
+.box{
+  font-style: bold;
+  border: 10px solid red;
+  border-radius: 20px;
+  width: 375px;
+  height: 260px;
+
+}
+h2{
+  font-size: 25px;
+
+}
+.blue{
+  border:  5px solid darkblue;
+  border-radius: 10px;
+  background-image:  url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTBt3g_larZlEhQr6NyT0bvurnFiU_R0ulwvsecR5TbvSUwKfQw);
+  background-repeat: no-repeat;
+  background-size: 400px 300px;
+
+background-position: center;
+}
+.radio{
+  color: darkblue;
+  font-style:  bold;
+  font-size: 20px;
+}

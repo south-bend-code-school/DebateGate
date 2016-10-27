@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 //Reference databse
 var dbRef = firebase.database().ref();
 
-//On click, create new node in db with given topic name, 
+//On click, create new node in db with given topic name,
 //add child with given topic description
 //Load groups again
 $('#submitButton').click(function (e) {
@@ -20,6 +20,3 @@ $('#submitButton').click(function (e) {
     dbRef.child(topic).set({'Question':question});
     location.assign('topics.html');
 });
-
-
-
