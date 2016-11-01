@@ -17,6 +17,10 @@ var dbRef = firebase.database().ref();
 $('#submitButton').click(function (e) {
     var topic = $('#topicInput').val();
     var question = $('#questionInput').val();
-    dbRef.child(topic).set({'Question':question});
+    var imageURL = $('#topicImage').val();
+    var dict ={};
+    dict['Question'] = question;
+    dict['ImageURL'] = imageURL;
+    dbRef.child(topic).set(dict);
     location.assign('topics.html');
 });

@@ -26,8 +26,6 @@ dbRef.on('value', snapshot=> {
             var pic_div = document.createElement('div');
             var image = document.createElement('img');
             var aTag = document.createElement('a');
-            aTag.setAttribute('href','join.html?topic='+dataKeys[i]);
-            //var alphaRef = storageRef.child("ND_Crest.jpg");
 
             //create text, load image to put into elements above
             var topicText = document.createTextNode(dataKeys[i]);
@@ -36,20 +34,20 @@ dbRef.on('value', snapshot=> {
             } else {
                 var questionText = document.createTextNode("No Question");
             }
+            if( snapshot.val()[dataKeys[i]]["ImageURL"] ){
+                var imageURL = snapshot.val()[dataKeys[i]]["ImageURL"];
+            } else {
+                var imageURL = "No Image";
+            }
 
             //append text/pic to elements
             topic.appendChild(topicText);
             question.appendChild(questionText);
-            //alphaRef.getDownloadURL().then(function(url){
-            //    image.src = url;
-            //}).catch(function(error){
-            //    console.log("in catch function");
-            //});
+            //image.src = imageURL;
             //add elements to div
             inner_div.appendChild(topic);
             inner_div.appendChild(question);
-            //outer_div.appendChild(image);
-            //div.appendChild(image);
+            //pic_div.appendChild(image);
             //make changes in css
             topic.style.fontFamily = "sans-serif";
             topic.style.color = "white";
@@ -67,11 +65,13 @@ dbRef.on('value', snapshot=> {
             inner_div.style.textAlign = "left";
             inner_div.style.display = "inline-grid";
             inner_div.style.width = "80%";
-            pic_div.style.backgroundColor = "Green";
-            pic_div.style.backgroundColor = "20%";
+            pic_div.style.width = "20%";
+            pic_div.style.backgroundImage = "url("+imageURL+")";
+            pic_div.style.backgroundSize = "contain"; 
+            pic_div.style.backgroundRepeat = "no-repeat";
             //append div to div and outer div to a tag
-            outer_div.appendChild(pic_div);
             outer_div.appendChild(inner_div);
+            outer_div.appendChild(pic_div);
             aTag.appendChild(outer_div);
             //append a ref tag (everything) to the body of the html document
             var middle = document.getElementById("middle");
