@@ -16,17 +16,18 @@ $('#joinButton').click(function (e) {
     //get Name value
     var name = $('#textInput').val();
     //get chat room topic    
-    var topic = location.search.split('topic=')[1];
+    var tmp = location.search.split('topic=')[1];
+    var topic = decodeURI(tmp.split('&name=')[0]);
     //get user position in debate
     var choice = $("input[name='Position']:checked").val();
     if(choice){
-        var title = choice;
+        var stance = choice;
     }
     //Add name to members list
-    dbRef.child(topic).child(title).push(name);
+    dbRef.child(topic).child(stance).push(name);
 
     //go to chat room with topic, name, and position
-    location.assign('chat.html?topic='+topic+'&name='+name+'&title='+title);
+    location.assign('chat.html?topic='+topic+'&name='+name+'&stance='+stance);
 });
 
 
