@@ -30,12 +30,10 @@ myDataRef2.on('value',function(snapshot){
     document.getElementById("question").innerHTML = snapshot.child("Question").val();
 });
 
-$('#messageInput').keypress(function (e) {
-  if(e.keyCode == 13) { //keyCode 13 is the "enter key"
+$('#submitButton').click(function () {
     var text = $('#messageInput').val();
     myDataRef.push({name:member_name,text:text});
     $('#messageInput').val('');
-  }
 });
 
 myDataRef.on('child_added', function(snapshot) {

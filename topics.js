@@ -26,7 +26,7 @@ dbRef.on('value', snapshot=> {
             var pic_div = document.createElement('div');
             var image = document.createElement('img');
             var aTag = document.createElement('a');
-
+            aTag.setAttribute('href','join.html?topic='+dataKeys[i]);
             //create text, load image to put into elements above
             var topicText = document.createTextNode(dataKeys[i]);
             if( snapshot.val()[dataKeys[i]]["Question"] ){
